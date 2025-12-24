@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Approach — Lackey AI</title>
+  <meta name="description" content="Practical frameworks for deciding when to automate, what it costs, and whether to build or buy. Self-assessment tools for document processing and workflow automation." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo"><a href="index.html">Lackey<span style="color:var(--accent)">AI</span></a></div>
+      <div class="nav">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="approach.html">Approach</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero" id="main-content">
+      <div class="kicker">Approach</div>
+      <h1>Practical frameworks for deciding when automation makes sense.</h1>
+      <div class="sub">
+        Not a philosophy essay — a practical resource for self-assessment.
+        Use these frameworks to figure out if you should build, buy, or skip automation entirely.
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Is Your Process Actually Automatable?</h3>
+        <p style="margin-bottom: 16px;">
+          Not everything should be automated. Here's a quick decision matrix.
+        </p>
+
+        <div class="decision-table">
+          <div class="decision-row decision-good">
+            <div class="decision-label">Automate</div>
+            <div class="decision-content">
+              <ul class="list" style="margin: 0;">
+                <li><strong>High volume:</strong> 50+ documents/week</li>
+                <li><strong>Consistent format:</strong> Same vendors, same layouts</li>
+                <li><strong>Clear rules:</strong> If X, then Y — no judgment calls</li>
+              </ul>
+              <p style="margin: 12px 0 0; font-size: 13px; color: var(--muted);">
+                <strong>Example:</strong> Processing invoices from your top 10 vendors. Same format every time, 200+ per month, extract the same 8 fields.
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row decision-partial">
+            <div class="decision-label">Partial</div>
+            <div class="decision-content">
+              <ul class="list" style="margin: 0;">
+                <li><strong>Variable formats:</strong> Different vendors, inconsistent layouts</li>
+                <li><strong>Some judgment needed:</strong> Edge cases require human review</li>
+                <li><strong>Exceptions common:</strong> 20-30% need manual handling</li>
+              </ul>
+              <p style="margin: 12px 0 0; font-size: 13px; color: var(--muted);">
+                <strong>Example:</strong> Contracts from multiple parties. Extract key clauses, flag unusual terms, but lawyer reviews all flagged items.
+              </p>
+            </div>
+          </div>
+
+          <div class="decision-row decision-skip">
+            <div class="decision-label">Skip</div>
+            <div class="decision-content">
+              <ul class="list" style="margin: 0;">
+                <li><strong>Low volume:</strong> &lt;10 items/week</li>
+                <li><strong>Highly variable:</strong> Every document is different</li>
+                <li><strong>Requires expertise:</strong> Domain knowledge needed for each decision</li>
+              </ul>
+              <p style="margin: 12px 0 0; font-size: 13px; color: var(--muted);">
+                <strong>Example:</strong> Complex legal analysis of unique M&A documents. Each one is different, requires lawyer expertise, not worth automating.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What LLM API Costs Actually Look Like</h3>
+        <p style="margin-bottom: 16px;">
+          Real numbers for common document processing tasks. These are operational costs — development is separate.
+        </p>
+
+        <div style="display: grid; gap: 12px;">
+          <div class="cost-example">
+            <div class="cost-task">Process 500 invoices/month</div>
+            <div class="cost-amount">~$200/month in Claude API costs</div>
+            <div class="cost-note">Standard B2B invoices, ~$0.40 per invoice average</div>
+          </div>
+
+          <div class="cost-example">
+            <div class="cost-task">Extract data from 1,000 contracts/month</div>
+            <div class="cost-amount">~$400/month in GPT-4 costs</div>
+            <div class="cost-note">Multi-page contracts, key clause extraction</div>
+          </div>
+
+          <div class="cost-example">
+            <div class="cost-task">Email categorization (300/week)</div>
+            <div class="cost-amount">~$150/month</div>
+            <div class="cost-note">Route to categories, extract key info, create tickets</div>
+          </div>
+        </div>
+
+        <div class="cost-comparison">
+          <h4 style="margin: 0 0 8px; font-size: 14px;">For context:</h4>
+          <p style="margin: 0; font-size: 14px;">
+            VA at $15/hr for 20 hrs/week = <strong>$1,200/month</strong><br />
+            Full-time data entry clerk = <strong>$3,000+/month</strong>
+          </p>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 13px; color: var(--muted);">
+          Note: These are operational costs only. Development costs are separate — see <a href="services.html" style="color: var(--accent);">Services & Pricing</a> for typical project ranges.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Build vs Buy Decision Framework</h3>
+        <p style="margin-bottom: 16px;">
+          Four questions to determine if custom development makes sense.
+        </p>
+
+        <div style="display: grid; gap: 16px;">
+          <div class="framework-question">
+            <div class="framework-number">1</div>
+            <div>
+              <h4 style="margin: 0 0 4px; font-size: 14px;">Volume: How many items per month?</h4>
+              <p style="margin: 0; font-size: 14px; color: var(--muted);">
+                <strong>&lt;100:</strong> Probably not worth custom development<br />
+                <strong>100-1,000:</strong> Sweet spot for automation<br />
+                <strong>&gt;1,000:</strong> Definitely automate — cost savings compound
+              </p>
+            </div>
+          </div>
+
+          <div class="framework-question">
+            <div class="framework-number">2</div>
+            <div>
+              <h4 style="margin: 0 0 4px; font-size: 14px;">Consistency: How variable is the input?</h4>
+              <p style="margin: 0; font-size: 14px; color: var(--muted);">
+                <strong>High consistency:</strong> Same format, same fields → simple extraction<br />
+                <strong>Medium:</strong> Some variation → handle with prompting + validation<br />
+                <strong>Low consistency:</strong> Every doc different → harder, may need human review
+              </p>
+            </div>
+          </div>
+
+          <div class="framework-question">
+            <div class="framework-number">3</div>
+            <div>
+              <h4 style="margin: 0 0 4px; font-size: 14px;">Integration: How many systems need to talk?</h4>
+              <p style="margin: 0; font-size: 14px; color: var(--muted);">
+                <strong>1-2 systems:</strong> Simple webhooks or API calls<br />
+                <strong>3-4 systems:</strong> Moderate complexity, still manageable<br />
+                <strong>5+ systems:</strong> Consider Zapier/Make or a real integration platform
+              </p>
+            </div>
+          </div>
+
+          <div class="framework-question">
+            <div class="framework-number">4</div>
+            <div>
+              <h4 style="margin: 0 0 4px; font-size: 14px;">Maintenance: Do you have technical capacity?</h4>
+              <p style="margin: 0; font-size: 14px; color: var(--muted);">
+                <strong>Yes:</strong> You can maintain custom code after handoff<br />
+                <strong>No:</strong> Buy a solution with vendor support, or budget for ongoing help
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="framework-summary">
+          <h4 style="margin: 0 0 8px; font-size: 14px;">Quick guide:</h4>
+          <p style="margin: 0; font-size: 14px;">
+            <strong>Build:</strong> High volume + consistent + 1-3 systems + tech capacity<br />
+            <strong>Buy:</strong> Low volume + variable + 5+ systems + no tech capacity<br />
+            <strong>Hybrid:</strong> Build the core logic, use existing tools for integration
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>When to Just Buy a Tool</h3>
+        <p style="margin-bottom: 16px;">
+          Sometimes the best automation is admitting you don't need custom work. This is where I tell you not to hire me.
+        </p>
+
+        <ul class="list">
+          <li>
+            <strong>CRM automation:</strong> Use HubSpot, Salesforce, or Pipedrive built-in workflows. Don't build custom.
+          </li>
+          <li>
+            <strong>Multi-system workflows (5+ tools):</strong> Use Zapier or Make. They've already solved the integration headaches.
+          </li>
+          <li>
+            <strong>Email marketing automation:</strong> Mailchimp, ConvertKit, or Klaviyo. Not worth building.
+          </li>
+          <li>
+            <strong>Standard accounting/invoicing:</strong> QuickBooks, Xero, FreshBooks. Just use them.
+          </li>
+          <li>
+            <strong>Basic form processing:</strong> Typeform + Zapier. Don't overcomplicate it.
+          </li>
+        </ul>
+
+        <div class="trust-callout">
+          Why am I telling you this? Because my job is to give you the right answer, not to maximize billable hours.
+          If buying is smarter than building, I'll tell you — usually in the first call.
+        </div>
+      </div>
+    </div>
+
+    <hr class="sep" />
+
+    <section class="card">
+      <h3>Still not sure?</h3>
+      <p>
+        That's exactly what the first call is for. Tell me what you're trying to automate,
+        and I'll give you an honest assessment — including whether you should just buy something off the shelf.
+      </p>
+      <div class="ctaRow" style="margin-top:12px">
+        <a class="btn btnPrimary" href="index.html#contact">Get in touch</a>
+        <a class="btn" href="work.html">See case studies</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Lackey AI</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="approach.html">Approach</a>
+        <a href="mailto:info@lackey-ai.com">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top" id="backToTop">↑ Back to top</a>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Back to top functionality
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
