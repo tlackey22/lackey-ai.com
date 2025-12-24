@@ -5,53 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lackey AI — Practical AI Automation for Business</title>
   <meta name="description" content="Straightforward, practical AI consultancy. Build automations and document pipelines without six-figure vendors. Scoping, prototypes, and implementation." />
-  <style>
-    :root { --bg:#0b0d10; --card:#11151b; --text:#e9eef6; --muted:#a9b4c3; --line:#233042; --accent:#66d9ff; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-           background: radial-gradient(1200px 600px at 20% 0%, #102033 0%, var(--bg) 55%); color: var(--text); }
-    a { color: var(--text); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
-    .top { display:flex; align-items:center; justify-content:space-between; gap:14px; }
-    .logo { font-weight: 800; letter-spacing: .3px; }
-    .nav { display:flex; gap:14px; color: var(--muted); font-size: 14px; }
-    .nav a { color: var(--muted); }
-    .hero { margin-top: 38px; display:grid; gap: 18px; }
-    .kicker { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { margin:0; font-size: clamp(28px, 4.2vw, 48px); line-height: 1.08; }
-    .sub { color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 70ch; }
-    .ctaRow { display:flex; flex-wrap:wrap; gap:12px; margin-top: 10px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding: 12px 14px; border-radius: 12px;
-           border: 1px solid var(--line); background: rgba(255,255,255,.04); font-weight: 650; font-size: 14px; }
-    .btnPrimary { background: linear-gradient(135deg, rgba(102,217,255,.22), rgba(102,217,255,.06));
-                  border-color: rgba(102,217,255,.35); }
-    .grid { margin-top: 26px; display:grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
-    .card { grid-column: span 12; background: rgba(255,255,255,.03); border: 1px solid var(--line);
-            border-radius: 16px; padding: 16px; }
-    @media (min-width: 860px) { .card.third { grid-column: span 4; } .card.half { grid-column: span 6; } }
-    .card h3 { margin: 0 0 8px; font-size: 16px; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
-    .list { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-    .sep { margin: 28px 0; border:0; border-top: 1px solid var(--line); opacity: .8; }
-    .footer { margin-top: 22px; color: var(--muted); font-size: 13px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; }
-    .badge { font-size: 12px; color: var(--muted); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px;
-             background: rgba(255,255,255,.02); }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="wrap">
     <div class="top">
       <div class="logo">Lackey<span style="color:var(--accent)">AI</span></div>
       <div class="nav">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="main-content">
       <div class="kicker">Practical AI automation</div>
       <h1>Straightforward AI consultancy for businesses that want to automate their own pipelines.</h1>
       <div class="sub">
@@ -68,40 +37,59 @@
 
     <div class="grid" id="services">
       <div class="card third">
-        <h3>Automation Scoping</h3>
-        <p>Turn “we should automate this” into a concrete plan: data sources, edge cases, security, ROI.</p>
+        <h3>Discovery Sprint</h3>
+        <p>Turn "we should automate this" into a concrete plan with clear build vs buy recommendations.</p>
         <ul class="list">
-          <li>1–2 week discovery</li>
-          <li>Process map + backlog</li>
-          <li>Build vs buy guidance</li>
+          <li>Process map of current workflow</li>
+          <li>Data quality assessment</li>
+          <li>Build vs buy recommendation with cost projections</li>
+          <li>Implementation roadmap</li>
         </ul>
       </div>
 
       <div class="card third">
-        <h3>Prototype → Production</h3>
-        <p>Prototypes that behave like production. Small, testable, documented, and maintainable.</p>
+        <h3>Proof-of-Concept Build</h3>
+        <p>Working prototypes on your real data to prove feasibility before full commitment.</p>
         <ul class="list">
-          <li>Python/FastAPI</li>
-          <li>Queues + retries</li>
-          <li>Observability + logs</li>
+          <li>Prototype tested on your actual data</li>
+          <li>Architecture decision document</li>
+          <li>Implementation guide for your team</li>
+          <li>Cost breakdown (dev + operational)</li>
         </ul>
       </div>
 
       <div class="card third">
-        <h3>Document Pipelines</h3>
-        <p>Extract structured data from messy PDFs/emails, validate totals, route exceptions.</p>
+        <h3>Document Pipeline Implementation</h3>
+        <p>Production-ready document extraction: PDFs to structured data with validation and error handling.</p>
         <ul class="list">
-          <li>Invoice/remittance intake</li>
-          <li>Line-item extraction</li>
-          <li>Human-in-the-loop review</li>
+          <li>Invoice/remittance/contract parsing</li>
+          <li>Line-item extraction with validation</li>
+          <li>Exception routing & review workflows</li>
+          <li>Integration with your existing systems</li>
         </ul>
+      </div>
+
+      <div class="card">
+        <h3>Not sure what's possible?</h3>
+        <p>
+          Most companies don't know what's a weekend project vs a 6-month build vs "just buy a SaaS tool."
+          That's the gap I fill — showing you which is which with working proof.
+        </p>
+        <ul class="list">
+          <li><strong>This invoice thing?</strong> 40 hours with Claude API. Here's the prototype.</li>
+          <li><strong>This other workflow?</strong> That's actually complex. Use [vendor], here's why.</li>
+          <li><strong>You're about to spend $200k on this?</strong> Here's the $2k version that does 80%.</li>
+        </ul>
+        <p style="margin-top: 12px; color: var(--text);">
+          I help you figure out what you can actually do yourself — the opposite of typical consultants who want dependency.
+        </p>
       </div>
 
       <div class="card half" id="process">
         <h3>How it works</h3>
         <p>
-          You’ll always know what we’re building, why it matters, and what it costs.
-          No black boxes. No “AI magic” decks.
+          You'll always know what we're building, why it matters, and what it costs.
+          No black boxes. No "AI magic" decks.
         </p>
         <ul class="list">
           <li><span class="mono">Step 1:</span> 30-minute intro call → define the outcome</li>
@@ -116,6 +104,7 @@
         <p>You want automation you can own internally — not a forever-retainer.</p>
         <ul class="list">
           <li>You have repetitive manual work (finance ops, docs, data entry)</li>
+          <li>You're not sure if you need a vendor or can DIY</li>
           <li>You can provide a handful of real examples to start</li>
           <li>You want a practical path with measurable outcomes</li>
         </ul>
@@ -127,12 +116,33 @@
     <section class="card" id="contact">
       <h3>Contact</h3>
       <p>
-        Email me what you’re trying to automate and what systems are involved.
-        I’ll reply with next steps and an honest take on feasibility.
+        Tell me what you're trying to automate and what systems are involved.
+        I'll reply with next steps and an honest take on feasibility.
       </p>
-      <div class="ctaRow" style="margin-top:12px">
-        <a class="btn btnPrimary" href="mailto:info@lackey-ai.com?subject=Project%20Intro%20-%20Lackey%20AI">info@lackey-ai.com</a>
-        <a class="btn" href="#">(Optional) Add Calendly link</a>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="formContainer">
+        <div class="formGroup">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="formGroup">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="formGroup">
+          <label for="project">What are you trying to automate?</label>
+          <textarea id="project" name="project" rows="4" required></textarea>
+        </div>
+        <div class="formGroup">
+          <label for="systems">Systems involved (optional)</label>
+          <input type="text" id="systems" name="systems" placeholder="e.g., Salesforce, QuickBooks, email..." />
+        </div>
+        <button type="submit" class="btn btnPrimary">
+          Send Message
+        </button>
+      </form>
+      <div class="ctaRow" style="margin-top:16px; padding-top: 16px; border-top: 1px solid var(--line);">
+        <p style="margin: 0; font-size: 14px; color: var(--muted);">Or email directly:</p>
+        <a class="btn" href="mailto:info@lackey-ai.com?subject=Project%20Intro%20-%20Lackey%20AI">info@lackey-ai.com</a>
       </div>
     </section>
 
@@ -144,6 +154,63 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Lackey AI",
+    "description": "Practical AI automation consultancy for businesses. Build automations and document pipelines without six-figure vendors.",
+    "url": "https://lackey-ai.com",
+    "email": "info@lackey-ai.com",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "serviceType": [
+      "AI Automation Consulting",
+      "Document Processing Automation",
+      "Business Process Automation",
+      "Invoice Extraction",
+      "Contract Analysis"
+    ],
+    "priceRange": "$$$",
+    "slogan": "Straightforward AI consultancy for businesses that want to automate their own pipelines",
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Document Extraction",
+      "Business Process Automation",
+      "API Integration"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Discovery Sprint",
+          "description": "Turn 'we should automate this' into a concrete plan with clear build vs buy recommendations"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Proof-of-Concept Build",
+          "description": "Working prototypes on your real data to prove feasibility before full commitment"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Document Pipeline Implementation",
+          "description": "Production-ready document extraction: PDFs to structured data with validation and error handling"
+        }
+      }
+    ]
+  }
   </script>
 </body>
 </html>

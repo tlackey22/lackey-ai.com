@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Studies — Lackey AI</title>
+  <meta name="description" content="Real automation projects: what clients thought they needed vs what we proved was possible. Technical details, timelines, and costs included." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo"><a href="index.html">Lackey<span style="color:var(--accent)">AI</span></a></div>
+      <div class="nav">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero" id="main-content">
+      <div class="kicker">Case Studies</div>
+      <h1>What they thought they needed vs what we proved was possible.</h1>
+      <div class="sub">
+        Real projects with technical details, timelines, and costs.
+        No marketing fluff — these are written like engineering post-mortems.
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="card case-study">
+        <h3 style="margin-bottom: 4px;">Invoice-to-ERP Pipeline</h3>
+        <div style="margin-bottom: 12px;">
+          <span class="badge">Finance Operations</span>
+          <span class="badge" style="margin-left: 8px;">Document Extraction</span>
+        </div>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What they thought they needed:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          "Multi-vendor integration platform. Probably 6-month build with a team of 3-4 developers.
+          We're looking at RFPs from enterprise vendors quoting $150k-$250k for setup + $3k/month."
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What we proved:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          Prototype in <span class="case-metric">3 weeks</span>, <span class="case-metric">$400/month</span> to run, they deployed it themselves with their existing ops team.
+          Processing <span class="case-metric">200+ invoices/month</span> within 2 months of handoff.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">The insight:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          90% of the complexity was just parsing PDFs correctly and handling the edge cases (rotated scans,
+          multi-page invoices, line items spanning pages). The "integration" was a simple webhook to their ERP.
+          They didn't need a platform — they needed reliable extraction with exception handling.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">Technical details:</h4>
+        <ul class="list">
+          <li><strong>Stack:</strong> Python/FastAPI, Claude 3.5 Sonnet API, PostgreSQL, Redis queue, Docker</li>
+          <li><strong>Cost:</strong> <span class="case-metric">$12k</span> prototype development, <span class="case-metric">~$400/mo</span> operational (API usage + hosting)</li>
+          <li><strong>Timeline:</strong> <span class="case-metric">3 weeks</span> from kickoff to handoff, <span class="case-metric">2 weeks</span> for their team to deploy to production</li>
+          <li><strong>Outcome:</strong> Processing <span class="case-metric">200+ invoices/month</span>, saving <span class="case-metric">15-20 hours/week</span> of manual data entry</li>
+          <li><strong>Accuracy:</strong> <span class="case-metric">95%+</span> field-level accuracy, human review queue for edge cases</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What they built in-house vs bought:</h4>
+        <ul class="list">
+          <li><strong>Built:</strong> Core extraction logic, validation rules, exception routing, ERP webhook integration</li>
+          <li><strong>Bought:</strong> Claude API for extraction, AWS for hosting, existing ERP system (already had)</li>
+          <li><strong>Skipped:</strong> Enterprise OCR platform ($$$), custom ML model training, vendor lock-in</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What made this work:</h4>
+        <ul class="list">
+          <li>They had 50+ sample invoices from real vendors to test against</li>
+          <li>Their ERP already had a webhook API (just needed documentation)</li>
+          <li>Their ops team was comfortable reviewing exceptions in a simple web UI</li>
+          <li>They didn't need real-time processing — batch runs every 4 hours was fine</li>
+        </ul>
+      </div>
+
+      <div class="card case-study">
+        <h3 style="margin-bottom: 4px;">Contract Clause Extraction</h3>
+        <div style="margin-bottom: 12px;">
+          <span class="badge">Legal Operations</span>
+          <span class="badge" style="margin-left: 8px;">Document Analysis</span>
+        </div>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What they thought they needed:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          "AI-powered contract analysis platform. We're reviewing contracts from 20+ vendors and manually
+          extracting key clauses (liability caps, termination terms, renewal windows). Takes our legal team
+          3-4 hours per contract."
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What we proved:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          Built a focused extraction tool in <span class="case-metric">2 weeks</span>. <span class="case-metric">$8k</span> development, <span class="case-metric">$150/month</span> to run.
+          Reduced review time from <span class="case-metric">3-4 hours to 30 minutes</span> per contract.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">The insight:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          They didn't need a full "contract lifecycle management" platform with all the bells and whistles.
+          They needed 8 specific data points extracted from each contract, flagged if unusual,
+          and exported to a spreadsheet. Classic case of vendors trying to sell a Ferrari when they needed a bike.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">Technical details:</h4>
+        <ul class="list">
+          <li><strong>Stack:</strong> Python/FastAPI, GPT-4 API, simple web UI, CSV export</li>
+          <li><strong>Cost:</strong> $8k prototype, ~$150/mo operational (mostly API costs)</li>
+          <li><strong>Timeline:</strong> 2 weeks discovery + build, 1 week refinement based on their feedback</li>
+          <li><strong>Outcome:</strong> Processing 40+ contracts/month, 85% time reduction per contract</li>
+          <li><strong>Accuracy:</strong> 92% extraction accuracy, legal team reviews all flagged items</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What they built in-house vs bought:</h4>
+        <ul class="list">
+          <li><strong>Built:</strong> Custom extraction prompts, validation logic, flagging rules, export formatting</li>
+          <li><strong>Bought:</strong> GPT-4 API, basic hosting, PDF parsing library (open source)</li>
+          <li><strong>Skipped:</strong> Enterprise CLM platform ($50k/year), custom NLP training, complex workflow engine</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">Key tradeoff we made:</h4>
+        <p style="color: var(--muted); font-size: 14px; margin: 8px 0 0;">
+          This tool is single-purpose. It extracts 8 fields from contracts, nothing more.
+          If their needs expand significantly, they might eventually need a real platform.
+          But right now, they're saving 120+ hours/month for $150/mo. ROI in week one.
+        </p>
+      </div>
+
+      <div class="card case-study">
+        <h3 style="margin-bottom: 4px;">Email Intake to Support Tickets</h3>
+        <div style="margin-bottom: 12px;">
+          <span class="badge">Customer Operations</span>
+          <span class="badge" style="margin-left: 8px;">Workflow Automation</span>
+        </div>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What they thought they needed:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          "Smart email routing system that categorizes incoming support requests and creates tickets
+          in our system. Vendors quoted $40k-$80k and 4-6 months of integration work."
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What we proved:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          Prototype in <span class="case-metric">10 days</span>, <span class="case-metric">$5k</span> total cost, <span class="case-metric">$200/month</span> to run.
+          They extended it themselves after handoff to add more categories.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">The insight:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          Their ticketing system already had an API. They just needed email parsing, basic categorization,
+          and ticket creation. This was 80% glue code and 20% clever prompting.
+          Not worth $80k or 6 months.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">Technical details:</h4>
+        <ul class="list">
+          <li><strong>Stack:</strong> Python, Gmail API, Claude API for categorization, Zendesk API</li>
+          <li><strong>Cost:</strong> $5k development, ~$200/mo operational</li>
+          <li><strong>Timeline:</strong> 10 days from kickoff to working prototype</li>
+          <li><strong>Outcome:</strong> Processing 300+ emails/week, 70% routed correctly without human intervention</li>
+          <li><strong>Accuracy:</strong> 85% correct categorization, escalation queue for uncertain cases</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What they built in-house vs bought:</h4>
+        <ul class="list">
+          <li><strong>Built:</strong> Email parsing, categorization logic, ticket creation, error handling</li>
+          <li><strong>Bought:</strong> Claude API, existing Gmail + Zendesk subscriptions (already had)</li>
+          <li><strong>Skipped:</strong> Enterprise customer service platform, complex workflow builder, ML training</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What happened after handoff:</h4>
+        <p style="color: var(--muted); font-size: 14px; margin: 8px 0 0;">
+          Their team added 3 new categories we didn't include in the prototype, tweaked the routing rules,
+          and added Slack notifications for high-priority items. Took them a week.
+          This is what good handoff documentation enables.
+        </p>
+      </div>
+
+      <div class="card case-study">
+        <h3 style="margin-bottom: 4px;">When We Said "Don't Build This"</h3>
+        <div style="margin-bottom: 12px;">
+          <span class="badge">Build vs Buy Assessment</span>
+        </div>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What they wanted:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          "Custom sales pipeline automation that integrates Salesforce, email, calendar, and DocuSign.
+          Auto-follows up with prospects, schedules meetings, sends contracts."
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">What we recommended:</h4>
+        <p style="margin: 0; font-size: 14px;">
+          Don't build this. Use HubSpot or Salesforce's native automation plus Zapier.
+          You'll spend $500/month instead of $50k custom development, and it'll be more maintainable.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--accent);">Why:</h4>
+        <ul class="list">
+          <li><strong>Complexity:</strong> This is workflow automation across 5+ systems, each with complex state</li>
+          <li><strong>Maintenance burden:</strong> Every vendor API change would break something</li>
+          <li><strong>Edge cases:</strong> Sales processes have infinite edge cases — you need a flexible tool</li>
+          <li><strong>Better options exist:</strong> This is exactly what HubSpot/Salesforce are built for</li>
+        </ul>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">What they paid us:</h4>
+        <p style="color: var(--muted); font-size: 14px; margin: 8px 0 0;">
+          $2,500 for a 3-day build vs buy assessment. We documented why custom development
+          was the wrong choice, compared 4 vendor options, and gave them a setup guide for HubSpot.
+          They implemented it themselves in 2 weeks and saved ~$45k.
+        </p>
+
+        <h4 style="margin: 16px 0 8px; font-size: 14px; color: var(--text);">The lesson:</h4>
+        <p style="color: var(--muted); font-size: 14px; margin: 8px 0 0;">
+          Sometimes the best automation is admitting you shouldn't automate.
+          My job is to tell you the truth, not to maximize billable hours.
+        </p>
+      </div>
+    </div>
+
+    <hr class="sep" />
+
+    <section class="card">
+      <h3>Want results like these?</h3>
+      <p>
+        Tell me what you're trying to automate. I'll give you an honest assessment of
+        what's possible, what it'll cost, and whether you should build, buy, or skip it entirely.
+      </p>
+      <div class="ctaRow" style="margin-top:12px">
+        <a class="btn btnPrimary" href="index.html#contact">Get in touch</a>
+        <a class="btn" href="services.html">See services & pricing</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Lackey AI</div>
+      <div class="mono">Built lean. Runs cheap. Ships value.</div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top" id="backToTop">↑ Back to top</a>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Back to top functionality
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies - Lackey AI",
+    "description": "Real automation projects with technical details, timelines, and costs",
+    "hasPart": [
+      {
+        "@type": "Article",
+        "headline": "Invoice-to-ERP Pipeline",
+        "description": "Automated invoice processing saving $150k+ in vendor costs",
+        "author": {
+          "@type": "Organization",
+          "name": "Lackey AI"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "applicationCategory": "BusinessApplication",
+          "name": "Invoice Processing Automation"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Contract Clause Extraction",
+        "description": "Legal operations automation reducing review time by 85%",
+        "author": {
+          "@type": "Organization",
+          "name": "Lackey AI"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "applicationCategory": "BusinessApplication",
+          "name": "Contract Analysis Tool"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Email Intake to Support Tickets",
+        "description": "Customer operations automation processing 300+ emails weekly",
+        "author": {
+          "@type": "Organization",
+          "name": "Lackey AI"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "applicationCategory": "BusinessApplication",
+          "name": "Email Routing Automation"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
